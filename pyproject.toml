@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "meuble-market"
+version = "0.1.0"
+description = "Meuble Market dashboard and API"
+authors = ["perymerdeka <ferilukmansyah@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0"
+djangorestframework = "^3.14.0"
+Markdown = "^3.5.1"
+django-filter = "^23.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
