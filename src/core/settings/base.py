@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+from os.path import join
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent.parent
 
@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     # own apps
-    "apps.users"
+    "apps.users",
+    "apps.shop",
+    "apps.products",
+    "apps.cart",
+    "apps.delivery",
 ]
 
 MIDDLEWARE = [
@@ -119,6 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+# config media files
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored'
+MEDIA_ROOT = join(join(BASE_DIR, "src"), "media")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
