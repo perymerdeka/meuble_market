@@ -9,7 +9,7 @@ class ProductModel(models.Model):
 
 
 class ProductTypeModel(models.Model):
-    product = models.ForeignKey(ProductModel, on_delete=models.CASCADE)
+    products = models.ManyToManyField(ProductModel, related_name='product_types')
     name = models.CharField(max_length=50)
 
 class ProductStockModel(models.Model):

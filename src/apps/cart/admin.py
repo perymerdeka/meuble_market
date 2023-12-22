@@ -10,7 +10,14 @@ class CartModelAdmin(admin.ModelAdmin):
 class CartItemModelAdmin(admin.ModelAdmin):
     pass
 
+class PaymentMethodModelAdmin(admin.ModelAdmin):
+    pass
+
+class PaymentMethodTypeModelAdmin(admin.ModelAdmin):
+    pass
+
 admin.site.register(CartModel, CartItemModelAdmin)
 admin.site.register(CartItemModel, CartItemModelAdmin)
-
+admin.site.register(PaymentMethodModel, PaymentMethodModelAdmin)
+admin.site.register(PaymentMethodTypeModel, PaymentMethodTypeModelAdmin)
 
