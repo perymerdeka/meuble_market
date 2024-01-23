@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # third party
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_yasg',
 
     # own apps
     "apps.users",
@@ -139,9 +140,27 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # User Model
 AUTH_USER_MODEL = 'users.UserModel'
 
+# API Settings
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Basic': {
+            'type': 'basic'
+      },
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
+}
+
+REDOC_SETTINGS = {
+   'LAZY_RENDERING': False,
+}
+
 
 # REST FRAMEWORK CONFIG
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
